@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ƹ̵̡Ӝ̵̨̄Ʒ</title>
+
+    <!--aframe-->
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+   
+    <!--espejos-->
+    <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script>
+
+    <!--typefaces-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+      box-sizing: border-box;
+    }
+         a-scene { 
+            height: 100vh;
+        float: left;
+        border: 1px solid red;
+    }
+    
+    .calma{
+          position:absolute;
+          height: 12vh;
+          left: 10px;
+          z-index: 1;
+          background-image: src="./assets/calma/Recurso 2perro.svgcalma";
+        }
+    
+    .creditos{
+            position:fixed;
+            right:25%;
+            left:25%;
+            z-index: 4;
+            bottom: 0%;
+            font-size: 13px;
+            font-family: 'Codystar', cursive;
+            color:red
+    
+        }
+        </style>
+
+</head>
+<body>
+
+    <div id="creditos" style="position: relative; left: 0; top: 0;">
+        <h1 style="text-align:center;" class="creditos">@xe.xe.exe (2021), music: bby ecco-cloud cover(bonus track) (2019), typeface: Neapolitan-Codystar</h1>
+    </div>
+
+    <div style="position: relative; left: 0; top: 0;">
+        <img src="./recursos/Recurso 2perro.svg" class="calma"/>
+    </div>
+
+    <div id="myEmbeddedScene">
+        <a-scene loading-screen="src:./recursos;corazon.png;dotsColor: red; backgroundColor: black" embedded vr-mode-ui="enabled: false">
+
+
+            <assets>
+                <video id="cielo" src="./recursos/cielovideo.mp4" autoplay="true" loop="true" preload="auto"></video>
+                <sound id="cloud" src="./recursos/cloud-cover.mp3"></sound>
+
+                <a-asset-item id="cadena" src="./recursos/cadena.gltf"></a-asset-item>
+                <a-asset-item id="flama" src="./recursos/flama.gltf"></a-asset-item>
+
+                <img src="recursos/mujer-distorsionada.jpg" id="chica">
+                <img src="recursos/corazon.png" id="corazon">
+        
+                </assets>        
+
+                <a-videosphere animation="property:rotation;to:360 360 0;dur:50000;loop:true;" src="#cielo"></a-videosphere>
+
+                <a-entity mirror gltf-model="#cadena"shadow="receive:true"position="2.912 4 -6"rotation="0 0 0"scale="5 5 5"animation="property:rotation;to:360 360 0;dur: 20000;loop:true"></a-entity>
+                <a-entity  mirror gltf-model="#flama" color="yellow"shadow="recive: true" scale="50 50 50" position="-0,5 0.3 0.7"rotation="90 0 0"></a-entity>
+
+                <a-sphere radius="4 4 4" position="4 -1 -150" mirror shadow="recive: true"></a-sphere>
+
+                <a-image src="#chica"position="4 -1 -15"shadow="receive: true"scale="15 15 15"></a-image>
+                <a-image src="#corazon" position="4 -1 -160" sound="src:#cloud;autoplay:true" scale="5 5 5" position material="side: double; alphatest: 0.5"></a-image>
+
+
+
+        </a-scene>
+    </div>  
+</body>
+</html>
