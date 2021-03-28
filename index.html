@@ -16,15 +16,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.rawgit.com/gladeye/aframe-preloader-component/1.0.2/dist/aframe-preloader-component.min.js"></script>
-
-    <!-- Bootstrap Bootswatch theme CSS - other themes available here: https://bootswatch.com -->
-  <link rel="stylesheet" href="https://cdn.rawgit.com/thomaspark/bootswatch/gh-pages/slate/bootstrap.min.css" />
-  
-  <!-- Bootstrap JS Dependencies -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <style>
 
         * {
@@ -69,10 +60,10 @@
     </div>
 
     <div id="myEmbeddedScene">
-        <a-scene preloader loading-screen="src:./recursos;corazon.png;dotsColor:red;backgroundColor:black" embedded vr-mode-ui="enabled: false">
+        <a-scene loading-screen="src:./recursos;corazon.png;dotsColor:red;backgroundColor:black" embedded vr-mode-ui="enabled: false">
 
 
-            <assets>
+            <assets timeout="10000">
 
                 <video id="cielo" src="./recursos/cielovideo.mp4" autoplay="true" loop="true" preload="auto"></video>
                 <sound id="cloud" src="./recursos/cloud-cover.mp3"></sound>
