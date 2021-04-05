@@ -78,10 +78,10 @@
 
                 <a-videosphere animation="property:rotation;to:360 360 0;dur:50000;loop:true;" src="#cielo"></a-videosphere>
 
-                <a-entity mirror gltf-model="#cadena"shadow="receive:true"position="2.912 4 -6"rotation="0 0 0"scale="5 5 5"animation="property:rotation;to:360 360 0;dur: 20000;loop:true"></a-entity>
-                <a-entity  mirror gltf-model="#flama" color="yellow"shadow="recive: true" scale="50 50 50" position="-0,5 0.3 0.7"rotation="90 0 0"></a-entity>
+                <a-entity mirror="repeat:true;refraction:0.5;distance:30000" repeat="true" gltf-model="#cadena"shadow="receive:true"position="2.912 4 -6"rotation="0 0 0"scale="5 5 5"animation="property:rotation;to:360 360 0;dur: 20000;loop:true"></a-entity>
+                <a-entity  mirror="repeat:true;refraction:0.5;distance:30000" repeat="true" mirror gltf-model="#flama" color="yellow"shadow="recive: true" scale="50 50 50" position="-0,5 0.3 0.7"rotation="90 0 0"></a-entity>
 
-                <a-sphere radius="4 4 4" position="4 -1 -150" mirror shadow="recive: true"></a-sphere>
+                <a-sphere mirror="repeat:true;refraction:0.5;distance:30000" repeat="true" radius="4 4 4" position="4 -1 -150" mirror shadow="recive: true"></a-sphere>
 
                 <a-image src="#chica"position="4 -1 -15"shadow="receive: true"scale="15 15 15"></a-image>
                 <a-image src="#corazon" position="4 -1 -160" sound="src:#cloud;autoplay:true" scale="5 5 5" position material="side: double; alphatest: 0.5"></a-image>
